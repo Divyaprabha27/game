@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Meeple Manor</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -17,21 +19,23 @@
         <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
 
         <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="reservations.html">Book a Table</a></li>
             <li><a href="dashboard.html" style="color: var(--primary-color);">Dashboard</a></li>
-            <li><a href="index.html">Log Out</a></li>
+            <li class="mobile-only-nav"><a href="index.html">Sign Out</a></li>
         </ul>
         <div class="nav-actions">
             <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
-            <div
-                style="width: 40px; height: 40px; border-radius: 50%; background: var(--secondary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                U</div>
+            <a href="index.html" class="btn btn-primary">Sign Out</a>
         </div>
     </nav>
 
-    <div class="dashboard-container" style="padding: 0 5%;">
+    <div class="dashboard-container">
         <div class="dashboard-grid">
             <aside class="sidebar glass">
                 <ul>
+                    <li><a href="index.html" style="color: #ef4444;">Sign Out</a></li>
                     <li><a href="#" class="active">Overview</a></li>
                     <li><a href="reservations.html">My Reservations</a></li>
                     <li><a href="events.html">My Events</a></li>
@@ -63,6 +67,52 @@
             </main>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="display: inline-block; margin-bottom: 1rem;">Meeple Manor</a>
+                <p style="color: var(--text-muted);">Your home for board games, coffee, and community. Come roll with
+                    us.</p>
+                <!-- Social Links -->
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="reservations.html">Book a Table</a></li>
+                    <li><a href="login.html">Sign In</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <ul class="footer-links">
+                    <li>Mon - Thu: 12pm - 10pm</li>
+                    <li>Fri: 12pm - 12am</li>
+                    <li>Sat: 10am - 12am</li>
+                    <li>Sun: 10am - 10pm</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li>📍 123 Meeple St, Gametown</li>
+                    <li>📞 (555) 123-4567</li>
+                    <li>✉️ hello@meeplemanor.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Meeple Manor. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- Scroll to Top -->
     <button id="scrollToTopBtn" title="Go to top">⬆️</button>

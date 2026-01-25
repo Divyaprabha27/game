@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Meeple Manor</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="glass">
+        <a href="index.html" class="logo">Meeple Manor</a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+
+        <ul class="nav-links">
+            <li><a href="dashboard.html" style="color: var(--primary-color);">Dashboard</a></li>
+            <li><a href="index.html">Log Out</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <div
+                style="width: 40px; height: 40px; border-radius: 50%; background: var(--secondary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                U</div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container" style="padding: 0 5%;">
+        <div class="dashboard-grid">
+            <aside class="sidebar glass">
+                <ul>
+                    <li><a href="#" class="active">Overview</a></li>
+                    <li><a href="reservations.html">My Reservations</a></li>
+                    <li><a href="events.html">My Events</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </aside>
+
+            <main>
+                <div class="glass" style="padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+                    <h2 style="margin-bottom: 1rem;">Welcome back, Player One!</h2>
+                    <p style="color: var(--text-muted);">Ready for your next game night?</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div class="glass" style="padding: 1.5rem; border-radius: 16px;">
+                        <h3 style="margin-bottom: 1rem;">Upcoming Reservations</h3>
+                        <p style="color: var(--text-muted); font-style: italic;">No active reservations.</p>
+                        <a href="reservations.html" class="btn btn-primary"
+                            style="margin-top: 1rem; display: inline-block;">Book a Table</a>
+                    </div>
+
+                    <div class="glass" style="padding: 1.5rem; border-radius: 16px;">
+                        <h3 style="margin-bottom: 1rem;">Your Events</h3>
+                        <p style="color: var(--text-muted); font-style: italic;">You haven't joined any events yet.</p>
+                        <a href="events.html" class="btn btn-secondary"
+                            style="margin-top: 1rem; display: inline-block;">Browse Events</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTopBtn" title="Go to top">⬆️</button>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

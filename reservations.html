@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Table - Meeple Manor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Specific tweaks for date input in dark mode if needed */
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass">
+        <a href="index.html" class="logo">Meeple Manor</a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="reservations.html" style="color: var(--primary-color);">Book a Table</a></li>
+            <li class="mobile-only-nav"><a href="login.html">Sign In</a></li>
+            <li class="mobile-only-nav"><a href="signup.html">Sign Up</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <a href="login.html" class="btn btn-secondary">Sign In</a>
+        </div>
+    </nav>
+
+    <div class="reservation-container">
+        <div class="glass auth-box" style="max-width: 600px;">
+            <h4 class="section-title" style="margin-bottom: 2rem;">Secure Your Spot</h4>
+            <form class="reservation-form">
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests" class="form-control">
+                        <option value="2">2 Players</option>
+                        <option value="3">3 Players</option>
+                        <option value="4">4 Players</option>
+                        <option value="5">5 Players</option>
+                        <option value="6">6+ (Group)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="requests">Special Requests</label>
+                    <textarea id="requests" class="form-control" rows="3"
+                        placeholder="Need a specific game setup? Let us know."></textarea>
+                </div>
+
+                <button type="button" class="btn btn-primary"
+                    onclick="alert('Table Request Sent! We will confirm shortly.')"
+                    style="width: 100%; margin-top: 1rem;">Reserve Table</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="display: inline-block; margin-bottom: 1rem;">Meeple Manor</a>
+                <p style="color: var(--text-muted);">Your home for board games, coffee, and community. Come roll with
+                    us.</p>
+                <!-- Social Links -->
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="reservations.html">Book a Table</a></li>
+                    <li><a href="login.html">Sign In</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <ul class="footer-links">
+                    <li>Mon - Thu: 12pm - 10pm</li>
+                    <li>Fri: 12pm - 12am</li>
+                    <li>Sat: 10am - 12am</li>
+                    <li>Sun: 10am - 10pm</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li>📍 123 Meeple St, Gametown</li>
+                    <li>📞 (555) 123-4567</li>
+                    <li>✉️ hello@meeplemanor.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Meeple Manor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTopBtn" title="Go to top">⬆️</button>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

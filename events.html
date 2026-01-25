@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Meeple Manor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Event grid styles moved to style.css */
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass">
+        <a href="index.html" class="logo">Meeple Manor</a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html" style="color: var(--primary-color);">Events</a></li>
+            <li><a href="reservations.html">Book a Table</a></li>
+            <li class="mobile-only-nav"><a href="login.html">Sign In</a></li>
+            <li class="mobile-only-nav"><a href="signup.html">Sign Up</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <a href="login.html" class="btn btn-secondary">Sign In</a>
+        </div>
+    </nav>
+
+    <section style="padding-top: 6rem;">
+
+        <!-- Featured Event Hero -->
+        <div class="featured-event glass">
+            <div style="flex: 1;">
+                <span class="badge"
+                    style="background: var(--primary-color); color: white; border: none; margin-bottom: 1rem; display: inline-block;">FEATURED
+                    THIS MONTH</span>
+                <h2 style="margin-top: 0.5rem;">The Grand Catan Championship</h2>
+                <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem;">Prove your mettle on the
+                    hexes. The biggest tournament of the year is here with a $500 prize pool.</p>
+                <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                    <div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">DATE</div>
+                        <div style="font-weight: bold; font-size: 1.2rem;">Oct 25, 2024</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">ENTRY</div>
+                        <div style="font-weight: bold; font-size: 1.2rem;">$25</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary">Register Now</button>
+            </div>
+            <div class="event-image"
+                style="flex: 1; height: 350px; margin: 0; background-image: linear-gradient(135deg, var(--accent-color), var(--secondary-color)); display: none; display: block;">
+                <!-- Image placeholder handled by CSS -->
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h2 class="section-title" style="margin: 0; font-size: 2rem;">Upcoming Events</h2>
+            <div class="event-filters" style="margin: 0; padding: 0;">
+                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="tournament">Tournaments</button>
+                <button class="filter-btn" data-filter="rpg">RPG Nights</button>
+                <button class="filter-btn" data-filter="workshop">Workshops</button>
+                <button class="filter-btn" data-filter="casual">Casual Play</button>
+            </div>
+        </div>
+
+        <div class="event-grid">
+            <!-- Event 1 -->
+            <div class="glass event-card" data-category="rpg"
+                style="padding: 1.5rem; border-radius: 20px; transition: transform 0.3s;"
+                onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div class="event-image">
+                    <div class="event-date">Oct 30</div>
+                </div>
+                <h3>Spooky Halloween RPG Night</h3>
+                <div class="event-meta">
+                    <span class="badge">Beginner Friendly</span>
+                    <span class="badge">Horror</span>
+                </div>
+                <p style="color: var(--text-muted); margin: 0.5rem 0 1rem;">One-shot horror campaigns including Call
+                    of Cthulhu and D&D.</p>
+                <div class="event-stats">
+                    <span><i class="far fa-clock"></i> 7:00 PM - 11:00 PM</span>
+                    <span><i class="far fa-user"></i> 4 Spots Left</span>
+                </div>
+                <button class="btn btn-primary" onclick="alert('Booking confirmed for RPG Night!')"
+                    style="width: 100%;">Book Spot ($10)</button>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="glass event-card" data-category="workshop"
+                style="padding: 1.5rem; border-radius: 20px; transition: transform 0.3s;"
+                onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div class="event-image"
+                    style="background-image: linear-gradient(45deg, var(--accent-color), var(--primary-color));">
+                    <div class="event-date">Nov 05</div>
+                </div>
+                <h3>Learn to Play: Gloomhaven</h3>
+                <div class="event-meta">
+                    <span class="badge">Workshop</span>
+                    <span class="badge">Co-op</span>
+                </div>
+                <p style="color: var(--text-muted); margin: 0.5rem 0 1rem;">New to big box games? Our gurus will teach
+                    you the ropes.</p>
+                <div class="event-stats">
+                    <span><i class="far fa-clock"></i> 6:00 PM - 9:00 PM</span>
+                    <span><i class="far fa-user"></i> 10 Spots</span>
+                </div>
+                <button class="btn btn-primary" onclick="alert('Booking confirmed for Learn to Play!')"
+                    style="width: 100%;">Free Event</button>
+            </div>
+
+            <!-- Event 3: New Mock Event -->
+            <div class="glass event-card" data-category="casual"
+                style="padding: 1.5rem; border-radius: 20px; transition: transform 0.3s;"
+                onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div class="event-image"
+                    style="background-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));">
+                    <div class="event-date">Nov 12</div>
+                </div>
+                <h3>Commander Night (Magic: TG)</h3>
+                <div class="event-meta">
+                    <span class="badge">Casual</span>
+                    <span class="badge">TCG</span>
+                </div>
+                <p style="color: var(--text-muted); margin: 0.5rem 0 1rem;">Bring your deck and battle in pods. Prizes
+                    for creative plays!</p>
+                <div class="event-stats">
+                    <span><i class="far fa-clock"></i> 6:30 PM - Late</span>
+                    <span><i class="far fa-user"></i> Open Entry</span>
+                </div>
+                <button class="btn btn-primary" onclick="alert('Booking confirmed for Commander Night!')"
+                    style="width: 100%;">Join ($5)</button>
+            </div>
+
+            <!-- Event 4: New Mock Event -->
+            <div class="glass event-card" data-category="tournament"
+                style="padding: 1.5rem; border-radius: 20px; transition: transform 0.3s;"
+                onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div class="event-image"
+                    style="background-image: linear-gradient(45deg, var(--secondary-color), var(--primary-color));">
+                    <div class="event-date">Nov 18</div>
+                </div>
+                <h3>Ticket to Ride Tournament</h3>
+                <div class="event-meta">
+                    <span class="badge">Competitive</span>
+                    <span class="badge">Strategy</span>
+                </div>
+                <p style="color: var(--text-muted); margin: 0.5rem 0 1rem;">All aboard! Compete for the longest route
+                    and exclusive prizes.</p>
+                <div class="event-stats">
+                    <span><i class="far fa-clock"></i> 2:00 PM - 6:00 PM</span>
+                    <span><i class="far fa-user"></i> 8 Spots Left</span>
+                </div>
+                <button class="btn btn-primary" onclick="alert('Booking confirmed for TTR Tournament!')"
+                    style="width: 100%;">Register ($12)</button>
+            </div>
+        </div>
+
+        <!-- Host Your Own Section -->
+        <div class="glass"
+            style="margin-top: 5rem; padding: 3rem; border-radius: 24px; text-align: center; background: rgba(255,255,255,0.02);">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Host Your Own Event</h2>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto 2rem;">Want to run a private
+                tournament, a corporate team building, or a birthday bash? We offer private room rentals and dedicated
+                game masters.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="reservations.html" class="btn btn-primary">Inquire Now</a>
+                <a href="#" class="btn btn-secondary">Download Brochure</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="display: inline-block; margin-bottom: 1rem;">Meeple Manor</a>
+                <p style="color: var(--text-muted);">Your home for board games, coffee, and community. Come roll with
+                    us.</p>
+                <!-- Social Links -->
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="reservations.html">Book a Table</a></li>
+                    <li><a href="login.html">Sign In</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <ul class="footer-links">
+                    <li>Mon - Thu: 12pm - 10pm</li>
+                    <li>Fri: 12pm - 12am</li>
+                    <li>Sat: 10am - 12am</li>
+                    <li>Sun: 10am - 10pm</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li>📍 123 Meeple St, Gametown</li>
+                    <li>📞 (555) 123-4567</li>
+                    <li>✉️ hello@meeplemanor.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Meeple Manor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTopBtn" title="Go to top">⬆️</button>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Theme Toggle ---
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    // Load saved theme or default to system preference
-    const currentTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+    // Default to 'light' mode always, unless user has explicitly saved a preference.
+    // Ignores system preferences (prefers-color-scheme) as per requirement.
+    // changed key to 'website_theme' to reset legacy preferences
+    const currentTheme = localStorage.getItem('website_theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
     updateToggleIcon(currentTheme);
 
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let newTheme = theme === 'dark' ? 'light' : 'dark';
 
         document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
+        localStorage.setItem('website_theme', newTheme);
         updateToggleIcon(newTheme);
     });
 

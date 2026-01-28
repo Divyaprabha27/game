@@ -8,116 +8,135 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Specific Dashboard overrides to handle lack of nav/footer */
+        .dashboard-container {
+            padding-top: 2rem;
+            /* Reduced padding since no fixed nav */
+        }
+
+        .sidebar {
+            top: 2rem;
+            /* Reset sticky top */
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav class="glass">
-        <a href="index.html" class="logo">Meeple Manor</a>
-
-        <!-- Mobile Toggle Button -->
-        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="reservations.html">Book a Table</a></li>
-            <li><a href="dashboard.html" style="color: var(--primary-color);">Dashboard</a></li>
-            <li class="mobile-only-nav"><a href="index.html">Sign Out</a></li>
-        </ul>
-        <div class="nav-actions">
-            <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
-            <a href="index.html" class="btn btn-primary">Sign Out</a>
-        </div>
-    </nav>
+    <!-- No Navigation as requested -->
 
     <div class="dashboard-container">
-        <div class="dashboard-grid">
-            <aside class="sidebar glass">
-                <ul>
-                    <li><a href="index.html" style="color: #ef4444;">Sign Out</a></li>
-                    <li><a href="#" class="active">Overview</a></li>
-                    <li><a href="reservations.html">My Reservations</a></li>
-                    <li><a href="events.html">My Events</a></li>
-                    <li><a href="#">Settings</a></li>
-                </ul>
-            </aside>
+        <div class="dashboard-container">
+            <!-- Dashboard Header -->
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <a href="index.html" class="logo">Meeple Manor</a>
 
-            <main>
-                <div class="glass" style="padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
-                    <h2 style="margin-bottom: 1rem;">Welcome back, Player One!</h2>
-                    <p style="color: var(--text-muted);">Ready for your next game night?</p>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode"
+                        style="background: var(--card-bg); padding: 0.5rem; border-radius: 50%; box-shadow: var(--shadow); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px;">🌙</button>
+                    <a href="index.html" class="btn btn-primary" style="font-size: 0.9rem;">Sign Out</a>
                 </div>
+            </header>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                    <div class="glass" style="padding: 1.5rem; border-radius: 16px;">
-                        <h3 style="margin-bottom: 1rem;">Upcoming Reservations</h3>
-                        <p style="color: var(--text-muted); font-style: italic;">No active reservations.</p>
-                        <a href="reservations.html" class="btn btn-primary"
-                            style="margin-top: 1rem; display: inline-block;">Book a Table</a>
+            <div class="dashboard-grid">
+                <aside class="sidebar glass">
+                    <ul>
+                        <li><a href="#" class="active">Overview</a></li>
+                        <li><a href="reservations.html">My Reservations</a></li>
+                        <li><a href="events.html">My Events</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </aside>
+
+                <main>
+                    <div class="glass" style="padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+                        <h2 style="margin-bottom: 1rem;">Welcome back, Player One!</h2>
+                        <p style="color: var(--text-muted);">Ready for your next game night?</p>
                     </div>
 
-                    <div class="glass" style="padding: 1.5rem; border-radius: 16px;">
-                        <h3 style="margin-bottom: 1rem;">Your Events</h3>
-                        <p style="color: var(--text-muted); font-style: italic;">You haven't joined any events yet.</p>
-                        <a href="events.html" class="btn btn-secondary"
-                            style="margin-top: 1rem; display: inline-block;">Browse Events</a>
+                    <!-- Existing Section 1 -->
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div class="glass" style="padding: 1.5rem; border-radius: 16px;">
+                            <h3 style="margin-bottom: 1rem;">Upcoming Reservations</h3>
+                            <p style="color: var(--text-muted); font-style: italic;">No active reservations.</p>
+                            <a href="reservations.html" class="btn btn-primary"
+                                style="margin-top: 1rem; display: inline-block;">Book a Table</a>
+                        </div>
+
+                        <div class="glass" style="padding: 1.5rem; border-radius: 16px;">
+                            <h3 style="margin-bottom: 1rem;">Your Events</h3>
+                            <p style="color: var(--text-muted); font-style: italic;">You haven't joined any events yet.
+                            </p>
+                            <a href="events.html" class="btn btn-secondary"
+                                style="margin-top: 1rem; display: inline-block;">Browse Events</a>
+                        </div>
                     </div>
-                </div>
-            </main>
-        </div>
-    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <a href="#" class="logo" style="display: inline-block; margin-bottom: 1rem;">Meeple Manor</a>
-                <p style="color: var(--text-muted);">Your home for board games, coffee, and community. Come roll with
-                    us.</p>
-                <!-- Social Links -->
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="reservations.html">Book a Table</a></li>
-                    <li><a href="login.html">Sign In</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Opening Hours</h4>
-                <ul class="footer-links">
-                    <li>Mon - Thu: 12pm - 10pm</li>
-                    <li>Fri: 12pm - 12am</li>
-                    <li>Sat: 10am - 12am</li>
-                    <li>Sun: 10am - 10pm</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact Us</h4>
-                <ul class="footer-links">
-                    <li>📍 123 Meeple St, Gametown</li>
-                    <li>📞 (555) 123-4567</li>
-                    <li>✉️ hello@meeplemanor.com</li>
-                </ul>
+                    <!-- New Section 2: Player Stats -->
+                    <div class="glass" style="padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem; text-align: center;">Your Stats</h3>
+                        <div style="display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center;">
+                            <div style="text-align: center;">
+                                <span
+                                    style="display: block; font-size: 2rem; font-weight: bold; color: var(--primary-color);">12</span>
+                                <span style="color: var(--text-muted);">Games Played</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <span
+                                    style="display: block; font-size: 2rem; font-weight: bold; color: var(--secondary-color);">3</span>
+                                <span style="color: var(--text-muted);">Tournaments Won</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <span
+                                    style="display: block; font-size: 2rem; font-weight: bold; color: var(--accent-color);">45</span>
+                                <span style="color: var(--text-muted);">Hours Logged</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Section 3: Recommended Games -->
+                    <div class="glass" style="padding: 2rem; border-radius: 16px;">
+                        <h3 style="margin-bottom: 1.5rem;">Recommended for You</h3>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="text-align: center;">
+                                <div
+                                    style="height: 150px; overflow: hidden; border-radius: 12px; margin-bottom: 0.5rem;">
+                                    <img src="https://i0.wp.com/thegoodlifefrance.com/wp-content/uploads/2018/05/carcasoone.jpg?resize=800%2C673&ssl=1"
+                                        alt="Carcassonne" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <h4>Carcassonne</h4>
+                            </div>
+                            <div style="text-align: center;">
+                                <div
+                                    style="height: 150px; overflow: hidden; border-radius: 12px; margin-bottom: 0.5rem;">
+                                    <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=400&q=80"
+                                        alt="Ticket to Ride" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <h4>Ticket to Ride</h4>
+                            </div>
+                            <div style="text-align: center;">
+                                <div
+                                    style="height: 150px; overflow: hidden; border-radius: 12px; margin-bottom: 0.5rem;">
+                                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=80"
+                                        alt="Pandemic" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <h4>Pandemic</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Meeple Manor. All rights reserved.</p>
-        </div>
-    </footer>
 
-    <!-- Scroll to Top -->
-    <button id="scrollToTopBtn" title="Go to top">⬆️</button>
+        <!-- No Footer as requested -->
 
-    <script src="js/script.js"></script>
+        <button id="scrollToTopBtn" title="Go to top">⬆️</button>
+
+        <script src="js/script.js"></script>
 </body>
 
 </html>

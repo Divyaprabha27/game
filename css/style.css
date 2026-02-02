@@ -866,6 +866,31 @@ footer {
         position: static;
         margin-bottom: 2rem;
     }
+
+    /* Show mobile-only-nav items in mobile menu */
+    .mobile-only-nav {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-only-nav a {
+        display: block;
+        padding: 0;
+        color: var(--text-color);
+        text-decoration: none;
+        text-align: center;
+        border-radius: 8px;
+        margin: 0;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-only-nav a:hover {
+        background: var(--primary-color);
+        color: white;
+    }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
@@ -933,12 +958,12 @@ footer {
         display: block !important;
         padding: 0;
         border-top: 0;
-        margin-top: 0;
+        margin: 0;
     }
 
     .mobile-only-nav a {
         display: block;
-        padding: 0.8rem 1.5rem;
+        padding: 0;
         color: var(--text-color);
         text-decoration: none;
         text-align: center;
@@ -1017,6 +1042,10 @@ footer {
         width: 100%;
         margin-bottom: 0 !important;
     }
+
+    .about-grid {
+        gap: 2rem;
+    }
 }
 
 .filters-container {
@@ -1075,9 +1104,43 @@ footer {
         The "This Week" section uses inline styles for flex. */
 }
 
-/* Mobile Footer Fix */
+/* Mobile Footer Fix & Full Width Columns */
 @media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
+
+    .footer-grid,
+    .features-grid,
+    .about-grid,
+    .pricing-grid,
+    .testimonial-grid,
+    .dashboard-grid,
+    .grid-2,
+    .event-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Force flex containers to vertical stack if they aren't already handled */
+    .hero,
+    .hero-2,
+    .featured-event,
+    .filters-container {
+        flex-direction: column !important;
+    }
+
+    /* Ensure glass containers with inline flex styles wrap correctly */
+    .glass[style*="display: flex"] {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* Reset widths for form controls or buttons if set to fixed */
+    .form-control,
+    .btn {
+        width: 100% !important;
+    }
+
+    /* Ensure content padding isn't too large on mobile */
+    section {
+        padding: 4rem 1.5rem !important;
     }
 }

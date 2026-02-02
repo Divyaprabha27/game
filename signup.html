@@ -19,17 +19,17 @@
             border-radius: 50%;
             transition: all 0.3s ease;
         }
-        
+
         #theme-toggle:hover {
             background-color: var(--primary-color);
             color: var(--text-muted);
         }
-        
+
         .signup-link {
             color: var(--primary-color);
             text-decoration: none;
         }
-        
+
         .signup-link:hover {
             color: var(--primary-color-dark);
         }
@@ -39,7 +39,8 @@
 <body>
 
     <div class="auth-container">
-        <button id="theme-toggle" aria-label="Toggle Dark Mode" style="position: fixed; top: 1rem; right: 1rem; background: none; border: none; color: var(--text-color); font-size: 1.2rem; cursor: pointer; padding: 0.5rem; border-radius: 50%; transition: all 0.3s ease; z-index: 1000;">🌙</button>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode"
+            style="position: fixed; top: 1rem; right: 1rem; background: none; border: none; color: var(--text-color); font-size: 1.2rem; cursor: pointer; padding: 0.5rem; border-radius: 50%; transition: all 0.3s ease; z-index: 1000;">🌙</button>
         <div class="glass auth-box">
             <div style="text-align: center;">
                 <a href="index.html" class="logo" style="font-size: 1.5rem;">Meeple Manor</a>
@@ -67,6 +68,13 @@
                         <input type="password" id="password-confirm" class="form-control" placeholder="Confirm Password"
                             required>
                     </div>
+                </div>
+                <div class="form-group" style="font-size: 0.9rem;">
+                    <label
+                        style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--text-color); margin: 0;">
+                        <input type="checkbox" id="terms" required>
+                        I agree to the <a href="#" style="color: var(--primary-color);">Terms & Conditions</a>
+                    </label>
                 </div>
                 <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Create
                     Account</button>

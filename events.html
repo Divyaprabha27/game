@@ -27,12 +27,14 @@
             <li><a href="events.html" style="color: var(--primary-color);">Events</a></li>
             <li><a href="reservations.html">Book a Table</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Contact</a></li>
             <li class="mobile-only-nav"><a href="login.html">Sign In</a></li>
             <li class="mobile-only-nav"><a href="signup.html">Sign Up</a></li>
         </ul>
         <div class="nav-actions">
             <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
             <a href="login.html" class="btn btn-secondary">Sign In</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
         </div>
     </nav>
 
@@ -60,13 +62,14 @@
                 <button class="btn btn-primary">Register Now</button>
             </div>
             <div class="event-image"
-                style="flex: 1; height: 350px; margin: 0; background-image: linear-gradient(135deg, var(--accent-color), var(--secondary-color)); display: none; display: block;">
-                <!-- Image placeholder handled by CSS -->
+                style="flex: 1; height: 350px; margin: 0;display: none; display: block;background-image: url('https://trinityrental.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftrinityrental-e51d5.appspot.com%2Fimage5_71adca8867%2Fimage5_71adca8867.jpg&w=3840&q=75'); background-size: cover; background-position: center;">
+                <div class="event-date">Oct 30</div>
             </div>
         </div>
 
         <!-- Filters -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <!-- Filters -->
+        <div class="filters-container">
             <h2 class="section-title" style="margin: 0; font-size: 2rem;">Upcoming Events</h2>
             <div class="event-filters" style="margin: 0; padding: 0;">
                 <button class="filter-btn active" data-filter="all">All Events</button>
@@ -82,7 +85,8 @@
             <div class="glass event-card" data-category="rpg"
                 style="padding: 1.5rem; border-radius: 20px; transition: transform 0.3s;"
                 onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                <div class="event-image">
+                <div class="event-image"
+                    style="background-image: url('https://6amcity.brightspotcdn.com/dims4/default/8fb1533/2147483647/strip/false/crop/1080x810+0+0/resize/1080x810!/quality/90/?url=https%3A%2F%2Fk1-prod-sixam-city.s3.us-east-2.amazonaws.com%2Fbrightspot%2F90%2F84%2F15f473a144d280c72b3507e46d42%2F36086215-277031646203805-2139494304454803456-n.jpg'); background-size: cover; background-position: center;">
                     <div class="event-date">Oct 30</div>
                 </div>
                 <h3>Spooky Halloween RPG Night</h3>
@@ -105,7 +109,7 @@
                 style="padding: 1.5rem; border-radius: 20px; transition: transform 0.3s;"
                 onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                 <div class="event-image"
-                    style="background-image: linear-gradient(45deg, var(--accent-color), var(--primary-color));">
+                    style="background-image: url('https://static01.nyt.com/images/2023/12/07/multimedia/board-game-union--01-jhzq/board-game-union--01-jhzq-articleLarge.jpg?quality=75&auto=webp&disable=upscale'); background-size: cover; background-position: center;">
                     <div class="event-date">Nov 05</div>
                 </div>
                 <h3>Learn to Play: Gloomhaven</h3>
@@ -128,7 +132,7 @@
                 style="padding: 1.5rem; border-radius: 20px; transition: transform 0.3s;"
                 onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                 <div class="event-image"
-                    style="background-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));">
+                    style="background-image: url('https://www.victorypointcafe.com/cdn/shop/files/7434510_orig_add3f6f8-2c3c-4866-927d-79547b3c6b40_600x600.jpg?v=1613155550'); background-size: cover; background-position: center;">
                     <div class="event-date">Nov 12</div>
                 </div>
                 <h3>Commander Night (Magic: TG)</h3>
@@ -151,7 +155,7 @@
                 style="padding: 1.5rem; border-radius: 20px; transition: transform 0.3s;"
                 onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                 <div class="event-image"
-                    style="background-image: linear-gradient(45deg, var(--secondary-color), var(--primary-color));">
+                    style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrAEpgTx8tgCnB1B3JXr5aOnuwbbvfpCkyJQ&s'); background-size: cover; background-position: center;">
                     <div class="event-date">Nov 18</div>
                 </div>
                 <h3>Ticket to Ride Tournament</h3>
@@ -172,9 +176,9 @@
 
         <!-- Host Your Own Section -->
         <div class="glass"
-            style="margin-top: 5rem; padding: 3rem; border-radius: 24px; text-align: center; background: rgba(255,255,255,0.02);">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Host Your Own Event</h2>
-            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto 2rem;">Want to run a private
+            style="margin-top: 5rem; padding: 5rem 3rem; border-radius: 24px; text-align: center; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1610890716271-e746d84871dd?q=80&w=2670&auto=format&fit=crop'); background-size: cover; background-position: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: white;">Host Your Own Event</h2>
+            <p style="color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 2rem;">Want to run a private
                 tournament, a corporate team building, or a birthday bash? We offer private room rentals and dedicated
                 game masters.</p>
             <div style="display: flex; gap: 1rem; justify-content: center;">
@@ -205,6 +209,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="events.html">Events</a></li>
                     <li><a href="reservations.html">Book a Table</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="login.html">Sign In</a></li>
                 </ul>
             </div>

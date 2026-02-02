@@ -19,6 +19,96 @@
             top: 2rem;
             /* Reset sticky top */
         }
+
+        /* Responsive Dashboard Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-wrap: nowrap !important;
+                align-items: center !important;
+            }
+
+            .mobile-nav-toggle {
+                display: block !important;
+                position: static !important;
+                /* Fix alignment */
+            }
+
+            .desktop-actions {
+                display: none !important;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-nav-menu.active {
+                display: block !important;
+            }
+
+            .mobile-menu-link:hover {
+                background: var(--primary-color);
+                color: white;
+            }
+
+            #mobile-theme-toggle:hover {
+                background: var(--primary-color);
+                color: white;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            header {
+                flex-wrap: nowrap !important;
+                align-items: center !important;
+            }
+
+            .mobile-nav-toggle {
+                display: block !important;
+                position: static !important;
+                /* Fix alignment */
+            }
+
+            .desktop-actions {
+                display: none !important;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-nav-menu.active {
+                display: block !important;
+            }
+
+            .mobile-menu-link:hover {
+                background: var(--primary-color);
+                color: white;
+            }
+
+            #mobile-theme-toggle:hover {
+                background: var(--primary-color);
+                color: white;
+            }
+        }
+
+        /* Sidebar link hover effects */
+        .sidebar-link:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .sidebar-link.active {
+            background: var(--primary-color);
+            color: white;
+        }
     </style>
 </head>
 
@@ -27,29 +117,60 @@
     <!-- No Navigation as requested -->
 
     <div class="dashboard-container">
-        <div class="dashboard-container">
-            <!-- Dashboard Header -->
-            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                <a href="index.html" class="logo">Meeple Manor</a>
+        <!-- Dashboard Header -->
+        <header
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; position: relative;">
+            <a href="index.html" class="logo">Meeple Manor</a>
 
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <button id="theme-toggle" aria-label="Toggle Dark Mode"
-                        style="background: var(--card-bg); padding: 0.5rem; border-radius: 50%; box-shadow: var(--shadow); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px;">🌙</button>
-                    <a href="index.html" class="btn btn-primary" style="font-size: 0.9rem;">Sign Out</a>
-                </div>
-            </header>
+            <!-- Mobile Toggle Button -->
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation"
+                style="display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-color); cursor: pointer;">☰</button>
 
-            <div class="dashboard-grid">
-                <aside class="sidebar glass">
-                    <ul>
-                        <li><a href="#" class="active">Overview</a></li>
-                        <li><a href="reservations.html">My Reservations</a></li>
-                        <li><a href="events.html">My Events</a></li>
-                        <li><a href="#">Settings</a></li>
-                    </ul>
-                </aside>
+            <!-- Desktop Actions -->
+            <div class="desktop-actions" style="display: flex; align-items: center; gap: 1rem;">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode"
+                    style="border: none; color: var(--text-color); font-size: 1.2rem; cursor: pointer; padding: 0.5rem; border-radius: 50%; transition: all 0.3s ease;">🌙</button>
+                <a href="index.html" class="btn btn-primary" style="font-size: 0.9rem;">Sign Out</a>
+            </div>
 
-                <main>
+            <!-- Mobile Menu -->
+            <ul class="mobile-nav-menu"
+                style="display: none; position: absolute; top: 100%; right: 0; background: var(--card-bg); backdrop-filter: blur(15px); border-radius: 12px; box-shadow: var(--shadow); min-width: 200px; z-index: 1000; list-style: none; padding: 1rem; margin: 0;">
+                <li><a href="#overview" class="mobile-menu-link"
+                        style="display: block; padding: 0.5rem 1rem; color: var(--text-color); text-decoration: none; border-radius: 8px; transition: all 0.3s ease;">Overview</a>
+                </li>
+                <li><a href="#reservations" class="mobile-menu-link"
+                        style="display: block; padding: 0.5rem 1rem; color: var(--text-color); text-decoration: none; border-radius: 8px; transition: all 0.3s ease;">My
+                        Reservations</a></li>
+                <li><a href="#events" class="mobile-menu-link"
+                        style="display: block; padding: 0.5rem 1rem; color: var(--text-color); text-decoration: none; border-radius: 8px; transition: all 0.3s ease;">My
+                        Events</a></li>
+                <li><a href="#settings" class="mobile-menu-link"
+                        style="display: block; padding: 0.5rem 1rem; color: var(--text-color); text-decoration: none; border-radius: 8px; transition: all 0.3s ease;">Settings</a>
+                </li>
+                <li><button id="mobile-theme-toggle" aria-label="Toggle Dark Mode"
+                        style="background: none; border: none; color: var(--text-color); font-size: 1.2rem; cursor: pointer; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s ease; width: 100%; text-align: left;">🌙
+                        Theme</button></li>
+                <li style="border-top: 1px solid var(--border-color); margin-top: 0.5rem; padding-top: 0.5rem;">
+                    <a href="index.html" class="btn btn-primary"
+                        style="font-size: 0.9rem; width: 100%; text-align: center; margin-top: 0.5rem;">Sign Out</a>
+                </li>
+            </ul>
+        </header>
+
+        <div class="dashboard-grid">
+            <aside class="sidebar glass">
+                <ul>
+                    <li><a href="#overview" class="sidebar-link active">Overview</a></li>
+                    <li><a href="#reservations" class="sidebar-link">My Reservations</a></li>
+                    <li><a href="#events" class="sidebar-link">My Events</a></li>
+                    <li><a href="#settings" class="sidebar-link">Settings</a></li>
+                </ul>
+            </aside>
+
+            <main>
+                <!-- Overview Section -->
+                <section id="overview">
                     <div class="glass" style="padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
                         <h2 style="margin-bottom: 1rem;">Welcome back, Player One!</h2>
                         <p style="color: var(--text-muted);">Ready for your next game night?</p>
@@ -127,9 +248,121 @@
                             </div>
                         </div>
                     </div>
+                </section>
 
-                </main>
-            </div>
+                <!-- Reservations Section -->
+                <section id="reservations" style="display: none;">
+                    <div class="glass" style="padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+                        <h2 style="margin-bottom: 1.5rem;">My Reservations</h2>
+                        <div style="display: grid; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div class="glass" style="padding: 1.5rem; border-radius: 12px;">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                                    <div>
+                                        <h4 style="margin-bottom: 0.5rem;">Table for 4 - Friday Night</h4>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem;">December 15, 2024 - 7:00
+                                            PM</p>
+                                    </div>
+                                    <span class="btn btn-primary" style="font-size: 0.8rem;">Confirmed</span>
+                                </div>
+                                <p style="color: var(--text-muted);">Reserved for your weekly game night with friends.
+                                </p>
+                            </div>
+                            <div class="glass" style="padding: 1.5rem; border-radius: 12px;">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                                    <div>
+                                        <h4 style="margin-bottom: 0.5rem;">Tournament Table - Saturday</h4>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem;">December 20, 2024 - 2:00
+                                            PM</p>
+                                    </div>
+                                    <span class="btn btn-secondary" style="font-size: 0.8rem;">Pending</span>
+                                </div>
+                                <p style="color: var(--text-muted);">Registered for the Catan Championship tournament.
+                                </p>
+                            </div>
+                        </div>
+                        <div style="text-align: center; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                            <a href="reservations.html" class="btn btn-primary">Book New Reservation</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Events Section -->
+                <section id="events" style="display: none;">
+                    <div class="glass" style="padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+                        <h2 style="margin-bottom: 1.5rem;">My Events</h2>
+                        <div style="display: grid; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div class="glass" style="padding: 1.5rem; border-radius: 12px;">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                                    <div>
+                                        <h4 style="margin-bottom: 0.5rem;">Board Game Night</h4>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem;">December 18, 2024 - 6:00
+                                            PM</p>
+                                    </div>
+                                    <span class="btn btn-primary" style="font-size: 0.8rem;">Registered</span>
+                                </div>
+                                <p style="color: var(--text-muted);">Weekly community game night. Bring your favorite
+                                    games!</p>
+                            </div>
+                            <div class="glass" style="padding: 1.5rem; border-radius: 12px;">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                                    <div>
+                                        <h4 style="margin-bottom: 0.5rem;">Catan Tournament</h4>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem;">December 20, 2024 - 2:00
+                                            PM</p>
+                                    </div>
+                                    <span class="btn btn-secondary" style="font-size: 0.8rem;">Waitlist</span>
+                                </div>
+                                <p style="color: var(--text-muted);">Competitive Catan tournament with prizes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                        <a href="events.html" class="btn btn-secondary">Browse More Events</a>
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="settings" style="display: none;">
+                    <div class="glass" style="padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+                        <h2 style="margin-bottom: 1.5rem;">Settings</h2>
+                        <div style="display: grid; gap: 2rem; max-width: 600px;">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" class="form-control" value="PlayerOne"
+                                    style="background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); padding: 0.8rem; border-radius: 8px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" value="player@meplemanor.com"
+                                    style="background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); padding: 0.8rem; border-radius: 8px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="notifications">Email Notifications</label>
+                                <select id="notifications" class="form-control"
+                                    style="background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); padding: 0.8rem; border-radius: 8px;">
+                                    <option>All Notifications</option>
+                                    <option>Important Only</option>
+                                    <option>None</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" id="public-profile" checked style="width: auto; margin: 0;">
+                                    <span style="font-weight: normal;">Make profile public</span>
+                                </label>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <button class="btn btn-primary">Save Changes</button>
+                                <button class="btn btn-secondary">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
 
         <!-- No Footer as requested -->
@@ -137,6 +370,86 @@
         <button id="scrollToTopBtn" title="Go to top">⬆️</button>
 
         <script src="js/script.js"></script>
+        <script>
+            // Dashboard specific JavaScript
+            document.addEventListener('DOMContentLoaded', function () {
+                // Mobile navigation toggle
+                const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+                const mobileNavMenu = document.querySelector('.mobile-nav-menu');
+
+                if (mobileNavToggle && mobileNavMenu) {
+                    mobileNavToggle.addEventListener('click', function () {
+                        mobileNavMenu.classList.toggle('active');
+                    });
+
+                    // Close menu when clicking outside
+                    document.addEventListener('click', function (e) {
+                        if (!mobileNavToggle.contains(e.target) && !mobileNavMenu.contains(e.target)) {
+                            mobileNavMenu.classList.remove('active');
+                        }
+                    });
+                }
+
+                // Mobile theme toggle
+                const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+                if (mobileThemeToggle) {
+                    mobileThemeToggle.addEventListener('click', function () {
+                        // Trigger the main theme toggle functionality
+                        const mainThemeToggle = document.getElementById('theme-toggle');
+                        if (mainThemeToggle) {
+                            mainThemeToggle.click();
+                        }
+                    });
+                }
+
+                // Sidebar link functionality
+                const sidebarLinks = document.querySelectorAll('.sidebar-link');
+                const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+                function handleSidebarClick(e) {
+                    e.preventDefault();
+
+                    // Remove active class from all links
+                    sidebarLinks.forEach(link => link.classList.remove('active'));
+                    mobileMenuLinks.forEach(link => link.classList.remove('active'));
+
+                    // Add active class to clicked link
+                    if (e.target.classList.contains('sidebar-link')) {
+                        e.target.classList.add('active');
+                    } else if (e.target.classList.contains('mobile-menu-link')) {
+                        e.target.classList.add('active');
+                        // Close mobile menu after selection
+                        if (mobileNavMenu) {
+                            mobileNavMenu.classList.remove('active');
+                        }
+                    }
+
+                    // Hide all sections
+                    const allSections = document.querySelectorAll('main section');
+                    allSections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+
+                    // Show the target section
+                    const targetId = e.target.getAttribute('href');
+                    if (targetId && targetId.startsWith('#')) {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.style.display = 'block';
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                }
+
+                sidebarLinks.forEach(link => {
+                    link.addEventListener('click', handleSidebarClick);
+                });
+
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', handleSidebarClick);
+                });
+            });
+        </script>
 </body>
 
 </html>

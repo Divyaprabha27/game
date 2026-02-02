@@ -2,10 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Theme Toggle ---
     const themeToggleBtn = document.getElementById('theme-toggle');
 
-    // Default to 'light' mode always, unless user has explicitly saved a preference.
-    // Ignores system preferences (prefers-color-scheme) as per requirement.
-    // changed key to 'website_theme' to reset legacy preferences
-    const currentTheme = localStorage.getItem('website_theme') || 'light';
+    // Always start in light mode - clear any existing preference
+    localStorage.removeItem('website_theme');
+    const currentTheme = 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
     updateToggleIcon(currentTheme);
 

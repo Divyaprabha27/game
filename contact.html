@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Meeple Manor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="glass">
+        <a href="index.html" class="logo">Meeple Manor</a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="index.html">Home</a>
+                <div class="dropdown-content">
+                    <a href="index.html">Home 1</a>
+                    <a href="home2.html">Home 2</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="reservations.html">Book a Table</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html" style="color: var(--primary-color);">Contact</a></li>
+            <li class="mobile-only-nav"><a href="login.html">Sign In</a></li>
+            <li class="mobile-only-nav"><a href="signup.html">Sign Up</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <a href="login.html" class="btn btn-secondary">Sign In</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Header / Hero -->
+    <header class="hero"
+        style="padding-top: 6rem; min-height: 50vh; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05));">
+        <div class="hero-content">
+            <h1>Get in Touch</h1>
+            <p>Have questions? Want to host an event? We'd love to hear from you!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section>
+        <div class="about-grid">
+            <div>
+                <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Send us a Message</h2>
+                <form class="glass" style="padding: 2rem; border-radius: 20px;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Name *</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Email *</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Subject *</label>
+                        <select id="subject" name="subject" class="form-control" required>
+                            <option value="">Select a topic...</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="events">Event Booking</option>
+                            <option value="membership">Membership Information</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Message *</label>
+                        <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+            <div>
+                <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Contact Information</h2>
+                <div class="glass" style="padding: 2rem; border-radius: 20px; margin-bottom: 2rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt"></i> Location</h3>
+                        <p style="color: var(--text-muted);">123 Meeple Street<br>Gametown, GT 12345</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-phone"></i> Phone</h3>
+                        <p style="color: var(--text-muted);">(555) 123-4567</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-envelope"></i> Email</h3>
+                        <p style="color: var(--text-muted);">hello@meeplemanor.com</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-clock"></i> Hours</h3>
+                        <ul style="color: var(--text-muted); list-style: none; padding: 0;">
+                            <li>Mon - Thu: 12pm - 10pm</li>
+                            <li>Fri: 12pm - 12am</li>
+                            <li>Sat: 10am - 12am</li>
+                            <li>Sun: 10am - 10pm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="glass" style="padding: 2rem; border-radius: 20px; text-align: center;">
+                    <h3 style="margin-bottom: 1rem;">Follow Us</h3>
+                    <div class="footer-social" style="justify-content: center;">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="background-color: rgba(0,0,0,0.02);">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="glass" style="padding: 1.5rem; border-radius: 16px; margin-bottom: 1rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Do I need to book in advance?</h3>
+                <p style="color: var(--text-muted);">While walk-ins are welcome, we recommend booking a table during peak hours (evenings and weekends) to ensure availability.</p>
+            </div>
+            <div class="glass" style="padding: 1.5rem; border-radius: 16px; margin-bottom: 1rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Can I bring my own games?</h3>
+                <p style="color: var(--text-muted);">Absolutely! We love seeing new games. Just make sure they're complete and in good condition.</p>
+            </div>
+            <div class="glass" style="padding: 1.5rem; border-radius: 16px; margin-bottom: 1rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Do you host private events?</h3>
+                <p style="color: var(--text-muted);">Yes! We offer private event packages for birthdays, corporate events, and special occasions. Contact us for details.</p>
+            </div>
+            <div class="glass" style="padding: 1.5rem; border-radius: 16px;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Is there parking available?</h3>
+                <p style="color: var(--text-muted);">We have a dedicated parking lot behind the building with 50 spaces, plus street parking available on Meeple Street.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="display: inline-block; margin-bottom: 1rem;">Meeple Manor</a>
+                <p style="color: var(--text-muted);">Your home for board games, coffee, and community. Come roll with us.</p>
+                <!-- Social Links -->
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="reservations.html">Book a Table</a></li>
+                    <li><a href="contact.html" style="color: var(--primary-color);">Contact</a></li>
+                    <li><a href="login.html">Sign In</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <ul class="footer-links">
+                    <li>Mon - Thu: 12pm - 10pm</li>
+                    <li>Fri: 12pm - 12am</li>
+                    <li>Sat: 10am - 12am</li>
+                    <li>Sun: 10am - 10pm</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li>📍 123 Meeple St, Gametown</li>
+                    <li>📞 (555) 123-4567</li>
+                    <li>✉️ hello@meeplemanor.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Meeple Manor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTopBtn" title="Go to top">⬆️</button>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

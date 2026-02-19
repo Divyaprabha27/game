@@ -306,9 +306,11 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-
+   
 }
-
+.reservation-container {
+    margin-top: 8%;
+}
 .auth-box {
     width: 100%;
     max-width: 450px;
@@ -1036,5 +1038,8 @@ footer {
     /* Ensure content padding isn't too large on mobile */
     section {
         padding: 4rem 1.5rem !important;
+    }
+    .reservation-container {
+        margin-top: 25%;
     }
 }

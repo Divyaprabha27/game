@@ -234,6 +234,9 @@ header.hero::before {
     max-width: 800px;
     z-index: 2;
     position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+
 }
 
 .hero h1 {

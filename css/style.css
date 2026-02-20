@@ -87,6 +87,10 @@ nav {
     display: none;
 }
 
+.desktop-only-nav {
+    display: block;
+}
+
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
@@ -106,8 +110,13 @@ nav {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--primary-color);
 }
 
 /* Dropdown Menu */
@@ -142,11 +151,13 @@ nav {
     font-size: 0.95rem;
 }
 
-.dropdown-content a:hover {
+.dropdown-content a:hover,
+.dropdown-content a.active {
     background-color: rgba(99, 102, 241, 0.1);
     /* Primary color light tint */
     border-radius: 8px;
     margin: 0 0.5rem;
+    color: var(--primary-color);
 }
 
 .nav-actions {
@@ -156,7 +167,7 @@ nav {
 }
 
 .btn {
-    padding: 0.6rem 1.5rem;
+    padding: 0.4rem 1.1rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
@@ -212,10 +223,12 @@ nav {
 header.hero {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 5%;
+    padding: 80px 5% 0;
+    /* Added top padding to account for fixed nav */
     position: relative;
     overflow: hidden;
     background-image: url('https://www.ryoiireview.com/upload/article/201805/1527478158_d48fb11885cf5d86419709d9588e9f93.jpg');
@@ -223,6 +236,7 @@ header.hero {
     background-position: center;
     background-repeat: no-repeat;
 }
+
 header.hero::before {
     content: '';
     position: absolute;
@@ -230,13 +244,15 @@ header.hero::before {
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
+
 .hero-content {
     max-width: 800px;
     z-index: 2;
     position: relative;
     background: rgba(0, 0, 0, 0.5);
-    padding: 20px 0;
-
+    padding: 40px;
+    border-radius: 24px;
+    /* Adding a border radius to match the "rounded" theme */
 }
 
 .hero h1 {
@@ -296,6 +312,10 @@ section {
     gap: 2rem;
 }
 
+.features-grid>div {
+    text-align: center;
+}
+
 .feature-card {
     padding: 2.5rem;
     border-radius: 20px;
@@ -320,12 +340,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-   
+
 }
+
 .reservation-container {
     margin-top: 8%;
     margin-bottom: 5%;
 }
+
 .auth-box {
     width: 100%;
     max-width: 450px;
@@ -348,12 +370,17 @@ section {
     width: 100%;
     padding: 0.8rem 1rem;
     border-radius: 12px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    /* More visible border for light mode */
     background: rgba(255, 255, 255, 0.05);
     /* Very subtle fill */
     color: var(--text-color);
     font-family: inherit;
     font-size: 1rem;
+}
+
+[data-theme='dark'] .form-control {
+    border-color: var(--border-color);
 }
 
 .form-control:focus {
@@ -395,7 +422,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.8rem;
+    padding: 0.6rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
     background: rgba(255, 255, 255, 0.05);
@@ -432,7 +459,11 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.about-grid .section-title {
+    text-align: left;
 }
 
 .about-image {
@@ -446,7 +477,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    align-items: flex-end;
+    align-items: stretch;
 }
 
 .pricing-card {
@@ -455,12 +486,15 @@ section {
     text-align: center;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pricing-card .btn {
     margin-top: auto;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
 }
 
 .pricing-card.highlight {
@@ -503,11 +537,14 @@ section {
 .testimonial-card {
     padding: 2rem;
     border-radius: 20px;
+    text-align: center;
 }
 
 .user-profile {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
@@ -799,15 +836,16 @@ footer {
         top: 80px;
         right: 5%;
         width: 280px;
-        background: var(--card-bg);
+        background: #000;
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border: 1px solid var(--border-color);
         border-radius: 16px;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 0.5rem;
-        gap: 0.2rem;
+        align-items: center;
+        /* Centered */
+        padding: 1rem 0.5rem;
+        gap: 0.5rem;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         z-index: 1000;
         height: auto;
@@ -826,7 +864,9 @@ footer {
         padding: 0.6rem 1rem;
         width: 100%;
         border-radius: 8px;
-        text-align: left;
+        text-align: center;
+        /* Centered */
+        color: #fff;
     }
 
     .nav-links a:hover {
@@ -845,8 +885,10 @@ footer {
         box-shadow: none;
         background: transparent;
         border: none;
-        padding-left: 1rem;
+        padding-left: 0;
         display: none;
+        text-align: center;
+        /* Centered dropdown content */
         /* Hidden by default, could use JS to toggle or just show all */
     }
 
@@ -903,14 +945,25 @@ footer {
         width: 100%;
         margin: 0;
         padding: 0;
-        border-top: 1px solid var(--border-color);
         margin-top: 0.25rem;
         padding-top: 0.25rem;
     }
 
     .mobile-only-nav a {
-        text-align: left;
+        text-align: center;
+        /* Centered */
         padding: 0.6rem 1rem;
+    }
+
+    .mobile-only-nav a.btn {
+        margin: 0.5rem auto;
+        display: block;
+        text-align: center;
+        width: calc(100% - 2rem);
+    }
+
+    .desktop-only-nav {
+        display: none !important;
     }
 }
 
@@ -951,11 +1004,71 @@ footer {
 
     .event-filters {
         width: 100%;
-        margin-bottom: 0 !important;
+        margin-bottom: 2rem !important;
+        flex-direction: column;
+        align-items: center;
+        /* Center the narrow buttons */
+        gap: 0.5rem;
+        overflow-x: visible;
+        /* Disable horizontal scroll */
+        padding-bottom: 0;
+    }
+
+    .filter-btn {
+        width: fit-content;
+        /* Reduced from 100% */
+        min-width: 160px;
+        /* Consistent professional width */
+        text-align: center;
+        padding: 0.4rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .event-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center all card content including the narrowed button */
+        text-align: center;
+    }
+
+    .event-card .btn {
+        width: fit-content !important;
+        /* Override inline style */
+        min-width: 160px;
+        margin-top: auto;
+    }
+
+    .host-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .host-actions .btn {
+        width: fit-content;
+        min-width: 200px;
+        margin: 0 auto;
     }
 
     .about-grid {
         gap: 2rem;
+    }
+
+    .about-grid>div {
+        text-align: center;
+    }
+
+    .about-grid .section-title {
+        text-align: center !important;
+    }
+
+    .pricing-features {
+        display: block;
+        text-align: center;
+    }
+
+    .pricing-features li {
+        justify-content: center;
     }
 }
 
@@ -1045,16 +1158,76 @@ footer {
     }
 
     /* Reset widths for form controls or buttons if set to fixed */
-    .form-control,
-    .btn {
+    .form-control {
         width: 100% !important;
+    }
+
+    .pricing-card .btn {
+        width: fit-content !important;
+        align-self: center;
     }
 
     /* Ensure content padding isn't too large on mobile */
     section {
         padding: 4rem 1.5rem !important;
     }
+
     .reservation-container {
         margin-top: 25%;
     }
+
+    .hero-actions {
+        flex-direction: column !important;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Home 2 Improvements */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .event-preview-card {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1.5rem !important;
+        padding: 1.5rem !important;
+    }
+
+    .event-preview-card .btn {
+        margin-left: 0 !important;
+        width: fit-content !important;
+        padding: 0.4rem 1.5rem !important;
+    }
+
+    .newsletter-box {
+        padding: 4rem 2rem !important;
+        /* Standardized 4-corner padding */
+    }
+}
+
+/* New Responsive Classes (Desktop) */
+.event-preview-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+}
+
+.newsletter-box {
+    padding: 4rem 2rem;
+}
+
+/* Hero Actions Desktop */
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }

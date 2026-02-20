@@ -9,46 +9,6 @@
     <link rel="icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Specific Home 2 Styles */
-        .hero-2 {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 10%;
-            background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.2), transparent 40%),
-                radial-gradient(circle at bottom left, rgba(99, 102, 241, 0.2), transparent 40%);
-        }
-
-        .hero-2-content {
-            max-width: 600px;
-        }
-
-        .hero-2 h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero-2-image {
-            font-size: 10rem;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
         .section-alt {
             background-color: rgba(0, 0, 0, 0.02);
         }
@@ -65,20 +25,22 @@
         <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
 
         <ul class="nav-links">
-            <li class="dropdown">
-                <a href="index.html">Home</a>
+            <li class="dropdown desktop-only-nav">
+                <a href="index.html" class="active">Home</a>
                 <div class="dropdown-content">
                     <a href="index.html">Home 1</a>
-                    <a href="home2.html">Home 2</a>
+                    <a href="home2.html" class="active">Home 2</a>
                 </div>
             </li>
+            <li class="mobile-only-nav"><a href="index.html">Home 1</a></li>
+            <li class="mobile-only-nav"><a href="home2.html" class="active">Home 2</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="reservations.html">Book a Table</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li class="mobile-only-nav"><a href="login.html">Sign In</a></li>
-            <li class="mobile-only-nav"><a href="signup.html">Sign Up</a></li>
+            <li class="mobile-only-nav"><a href="login.html" class="btn btn-secondary">Sign In</a></li>
+            <li class="mobile-only-nav"><a href="signup.html" class="btn btn-primary">Sign Up</a></li>
         </ul>
         <div class="nav-actions">
             <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
@@ -88,21 +50,22 @@
     </nav>
 
     <!-- Section 1: Distinct Hero -->
-    <!-- Section 1: Distinct Hero -->
-    <header class="hero-2"
-        style="background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.4), transparent 50%), radial-gradient(circle at bottom left, rgba(99, 102, 241, 0.4), transparent 50%);">
-        <div class="hero-2-content">
+    <header class="hero"
+        style="background-image: url('http://oneboardfamily.com/wp-content/uploads/2022/08/cafe-review.jpg');">
+        <div class="hero-bg-blob blob-1"></div>
+        <div class="hero-bg-blob blob-2"></div>
+
+        <div class="hero-content">
             <span
-                style="display: inline-block; margin-top: 4rem; color: var(--primary-color); font-weight: bold; letter-spacing: 2px; background: rgba(255,255,255,0.8); padding: 0.2rem 1rem; border-radius: 50px; backdrop-filter: blur(5px);">WELCOME
+                style="display: inline-block; color: var(--primary-color); font-weight: bold; letter-spacing: 2px; background: rgba(255,255,255,0.8); padding: 0.2rem 1rem; border-radius: 50px; backdrop-filter: blur(5px);">WELCOME
                 TO THE MANOR</span>
             <h1 style="margin-top: 1rem; text-shadow: 0 4px 6px rgba(0,0,0,0.1);">Eat. Sleep.<br>Board Game.<br>Repeat.
             </h1>
-            <p style="margin-bottom: 2rem; color: var(--text-color); font-size: 1.1rem; max-width: 500px;">Your new
+            <p
+                style="margin-bottom: 2rem; color: rgba(255, 255, 255, 0.85); font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Your new
                 favorite spot in town. Immerse yourself in a world of strategy, luck, and good vibes.</p>
             <a href="events.html" class="btn btn-primary">See What's On</a>
-        </div>
-        <div class="hero-2-image">
-            🎲
         </div>
     </header>
 
@@ -152,8 +115,7 @@
     <section>
         <h2 class="section-title">This Week</h2>
         <div style="display: flex; flex-direction: column; gap: 1rem;">
-            <div class="glass"
-                style="padding: 1.5rem; border-radius: 16px; display: flex; align-items: center; gap: 2rem;">
+            <div class="glass event-preview-card" style="border-radius: 16px;">
                 <div
                     style="font-weight: bold; color: var(--primary-color); font-size: 1.5rem; text-align: center; min-width: 80px;">
                     NOV<br>12
@@ -164,8 +126,7 @@
                 </div>
                 <a href="#" class="btn btn-secondary" style="margin-left: auto;">Join</a>
             </div>
-            <div class="glass"
-                style="padding: 1.5rem; border-radius: 16px; display: flex; align-items: center; gap: 2rem;">
+            <div class="glass event-preview-card" style="border-radius: 16px;">
                 <div
                     style="font-weight: bold; color: var(--accent-color); font-size: 1.5rem; text-align: center; min-width: 80px;">
                     NOV<br>14
@@ -181,8 +142,8 @@
 
     <!-- Section 5: Newsletter/CTA -->
     <section class="section-alt">
-        <div class="glass"
-            style="padding: 4rem; border-radius: 24px; text-align: center; max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));">
+        <div class="glass newsletter-box"
+            style="border-radius: 24px; text-align: center; max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));">
             <h2>Join the Inner Circle</h2>
             <p style="margin: 1rem 0 2rem; color: var(--text-muted);">Get exclusive invites to secret game nights and
                 early access to new arrivals.</p>
@@ -195,113 +156,112 @@
 
     <!-- Section 6: Community Spotlight (Replaced Find Us) -->
     <section>
-        <section>
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 class="section-title" style="margin-bottom: 1rem;">Community Spotlight</h2>
-                <a href="dashboard.html" class="btn btn-secondary">View Leaderboard</a>
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 class="section-title" style="margin-bottom: 1rem;">Community Spotlight</h2>
+            <a href="dashboard.html" class="btn btn-secondary">View Leaderboard</a>
+        </div>
+
+        <div class="features-grid">
+            <div class="glass"
+                style="padding: 2rem; border-radius: 20px; text-align: center; position: relative; overflow: hidden;">
+                <div
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--primary-color);">
+                </div>
+                <div style="font-size: 3rem; margin-bottom: 1rem;">👑</div>
+                <h3>Board Game Geek</h3>
+                <p style="color: var(--primary-color); font-weight: bold; margin-bottom: 0.5rem;">Player of the
+                    Month
+                </p>
+                <p style="color: var(--text-muted);">Alex M.</p>
+                <p style="font-size: 0.9rem; margin-top: 1rem;">"Strategist extraordinaire. Undefeated in
+                    Terraforming
+                    Mars for 3 weeks."</p>
             </div>
 
-            <div class="features-grid">
-                <div class="glass"
-                    style="padding: 2rem; border-radius: 20px; text-align: center; position: relative; overflow: hidden;">
-                    <div
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--primary-color);">
-                    </div>
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">👑</div>
-                    <h3>Board Game Geek</h3>
-                    <p style="color: var(--primary-color); font-weight: bold; margin-bottom: 0.5rem;">Player of the
-                        Month
-                    </p>
-                    <p style="color: var(--text-muted);">Alex M.</p>
-                    <p style="font-size: 0.9rem; margin-top: 1rem;">"Strategist extraordinaire. Undefeated in
-                        Terraforming
-                        Mars for 3 weeks."</p>
+            <div class="glass"
+                style="padding: 2rem; border-radius: 20px; text-align: center; position: relative; overflow: hidden;">
+                <div
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--secondary-color);">
                 </div>
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+                <h3>The Welcoming Committee</h3>
+                <p style="color: var(--secondary-color); font-weight: bold; margin-bottom: 0.5rem;">Community MVP
+                </p>
+                <p style="color: var(--text-muted);">Sam & Jordan</p>
+                <p style="font-size: 0.9rem; margin-top: 1rem;">"Always ready to teach a new game to newcomers. The
+                    heart of our cafe."</p>
+            </div>
 
-                <div class="glass"
-                    style="padding: 2rem; border-radius: 20px; text-align: center; position: relative; overflow: hidden;">
-                    <div
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--secondary-color);">
-                    </div>
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
-                    <h3>The Welcoming Committee</h3>
-                    <p style="color: var(--secondary-color); font-weight: bold; margin-bottom: 0.5rem;">Community MVP
-                    </p>
-                    <p style="color: var(--text-muted);">Sam & Jordan</p>
-                    <p style="font-size: 0.9rem; margin-top: 1rem;">"Always ready to teach a new game to newcomers. The
-                        heart of our cafe."</p>
+            <div class="glass"
+                style="padding: 2rem; border-radius: 20px; text-align: center; position: relative; overflow: hidden;">
+                <div
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--accent-color);">
                 </div>
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🎲</div>
+                <h3>Dice Goblin</h3>
+                <p style="color: var(--accent-color); font-weight: bold; margin-bottom: 0.5rem;">Most Games Played
+                </p>
+                <p style="color: var(--text-muted);">Riley C.</p>
+                <p style="font-size: 0.9rem; margin-top: 1rem;">"Logged over 50 unique games this month alone. A
+                    true
+                    explorer."</p>
+            </div>
+        </div>
+    </section>
 
-                <div class="glass"
-                    style="padding: 2rem; border-radius: 20px; text-align: center; position: relative; overflow: hidden;">
-                    <div
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--accent-color);">
-                    </div>
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎲</div>
-                    <h3>Dice Goblin</h3>
-                    <p style="color: var(--accent-color); font-weight: bold; margin-bottom: 0.5rem;">Most Games Played
-                    </p>
-                    <p style="color: var(--text-muted);">Riley C.</p>
-                    <p style="font-size: 0.9rem; margin-top: 1rem;">"Logged over 50 unique games this month alone. A
-                        true
-                        explorer."</p>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="display: inline-block; margin-bottom: 1rem;">Meeple Manor</a>
+                <p style="color: var(--text-muted);">Your home for board games, coffee, and community. Come roll
+                    with
+                    us.</p>
+                <!-- Social Links -->
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="#" class="logo" style="display: inline-block; margin-bottom: 1rem;">Meeple Manor</a>
-                    <p style="color: var(--text-muted);">Your home for board games, coffee, and community. Come roll
-                        with
-                        us.</p>
-                    <!-- Social Links -->
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="reservations.html">Book a Table</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="login.html">Sign In</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Opening Hours</h4>
-                    <ul class="footer-links">
-                        <li>Mon - Thu: 12pm - 10pm</li>
-                        <li>Fri: 12pm - 12am</li>
-                        <li>Sat: 10am - 12am</li>
-                        <li>Sun: 10am - 10pm</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li>📍 123 Meeple St, Gametown</li>
-                        <li>📞 (555) 123-4567</li>
-                        <li>✉️ hello@meeplemanor.com</li>
-                    </ul>
-                </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="reservations.html">Book a Table</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Meeple Manor. All rights reserved.</p>
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <ul class="footer-links">
+                    <li>Mon - Thu: 12pm - 10pm</li>
+                    <li>Fri: 12pm - 12am</li>
+                    <li>Sat: 10am - 12am</li>
+                    <li>Sun: 10am - 10pm</li>
+                </ul>
             </div>
-        </footer>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li>📍 123 Meeple St, Gametown</li>
+                    <li>📞 (555) 123-4567</li>
+                    <li>✉️ hello@meeplemanor.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Meeple Manor. All rights reserved.</p>
+        </div>
+    </footer>
 
-        <!-- Scroll to Top -->
-        <button id="scrollToTopBtn" title="Go to top">⬆️</button>
+    <!-- Scroll to Top -->
+    <button id="scrollToTopBtn" title="Go to top">⬆️</button>
 
-        <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -20,20 +20,22 @@
         <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
 
         <ul class="nav-links">
-            <li class="dropdown">
-                <a href="index.html">Home</a>
+            <li class="dropdown desktop-only-nav">
+                <a href="index.html" class="active">Home</a>
                 <div class="dropdown-content">
-                    <a href="index.html">Home 1</a>
+                    <a href="index.html" class="active">Home 1</a>
                     <a href="home2.html">Home 2</a>
                 </div>
             </li>
+            <li class="mobile-only-nav"><a href="index.html" class="active">Home 1</a></li>
+            <li class="mobile-only-nav"><a href="home2.html">Home 2</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="reservations.html">Book a Table</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li class="mobile-only-nav"><a href="login.html">Sign In</a></li>
-            <li class="mobile-only-nav"><a href="signup.html">Sign Up</a></li>
+            <li class="mobile-only-nav"><a href="login.html" class="btn btn-secondary">Sign In</a></li>
+            <li class="mobile-only-nav"><a href="signup.html" class="btn btn-primary">Sign Up</a></li>
         </ul>
         <div class="nav-actions">
             <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
@@ -51,7 +53,7 @@
             <h1>Roll the Dice, <br>Make Memories.</h1>
             <p>Experience the ultimate board game cafe. Over 500+ games, premium coffee, and a community that loves to
                 play.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center;">
+            <div class="hero-actions">
                 <a href="reservations.html" class="btn btn-primary">Book a Table</a>
                 <a href="events.html" class="btn btn-secondary">Upcoming Events</a>
             </div>
@@ -89,7 +91,7 @@
                     alt="Meeple Manor Interior" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
-                <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">More Than Just Games</h2>
+                <h2 class="section-title" style="margin-bottom: 1.5rem;">More Than Just Games</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Founded in 2024, Meeple Manor was built on a
                     simple idea: bringing people together. We believe in the power of face-to-face interaction, shared
                     laughter, and friendly competition.</p>
@@ -116,7 +118,7 @@
                     <li>✅ Stay as long as you like</li>
                     <li>✅ Expert Game Teaching</li>
                 </ul>
-                <a href="reservations.html" class="btn btn-secondary" style="width: 100%;">Book a Table</a>
+                <a href="reservations.html" class="btn btn-secondary">Book a Table</a>
             </div>
 
             <div class="pricing-card glass highlight">
@@ -132,7 +134,7 @@
                     <li>✅ Priority Table Booking</li>
                     <li>✅ Free Entry to Tournaments</li>
                 </ul>
-                <a href="signup.html" class="btn btn-primary" style="width: 100%;">Join Now</a>
+                <a href="signup.html" class="btn btn-primary">Join Now</a>
             </div>
 
             <div class="pricing-card glass">
@@ -145,7 +147,7 @@
                     <li>✅ Dedicated Game Guru</li>
                     <li>✅ Catering Options</li>
                 </ul>
-                <a href="reservations.html" class="btn btn-secondary" style="width: 100%;">Inquire Now</a>
+                <a href="reservations.html" class="btn btn-secondary">Reserve Now</a>
             </div>
         </div>
     </section>
@@ -208,11 +210,11 @@
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="events.html">Events</a></li>
                     <li><a href="reservations.html">Book a Table</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="login.html">Sign In</a></li>
                 </ul>
             </div>
             <div class="footer-col">
